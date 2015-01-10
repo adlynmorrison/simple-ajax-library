@@ -33,6 +33,10 @@ Unaproduction.createXHR = function(url, options){
 			options.data = qstring.join("&");
 		}
 
+		if (options.cache == false && options.method.toUpperCase() == "GET"){
+			url = url+"?_="+ new Date().getTime();
+		}
+
 		xhr.onreadystatechange = function() {
 			if(xhr.readyState == 1){
 				if(options.before){

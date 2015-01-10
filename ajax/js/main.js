@@ -6,6 +6,7 @@
 				
 		Unaproduction.ajax('files/ajax.txt', {
 			method: "GET",
+			cache: false,
 			complete: function(response){
 				alert(response);
 			}
